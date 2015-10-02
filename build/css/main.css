@@ -1,0 +1,237 @@
+@import 'http://fonts.googleapis.com/css?family=Gentium+Basic|Open+Sans:700';
+* {
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
+
+i {
+  color: #fff; }
+
+.app {
+  width: 500px;
+  margin: 20px auto;
+  background: #111;
+  position: relative; }
+
+.app__body {
+  padding: 40px; }
+
+.hide {
+  display: none; }
+
+body {
+  font: 18px/27px "Gentium Basic", serif; }
+
+h1 {
+  font: 32px/42px "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+.app__head {
+  background: #9D2BFA;
+  padding: 20px;
+  position: relative; }
+
+.saved {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%); }
+  .saved i {
+    transition: color 0.5s; }
+
+.search {
+  width: 50%;
+  margin: 0 auto;
+  position: relative; }
+
+input.search__field {
+  border: none;
+  width: 100%;
+  background: #BB67FF;
+  border-radius: 100px;
+  padding: 10px 40px 10px 20px;
+  outline: none;
+  font-size: 20px;
+  box-sizing: border-box;
+  color: #fff; }
+
+.search__button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: none;
+  background: #BB67FF; }
+
+.panels {
+  position: relative;
+  margin: 50px 0 20px;
+  min-height: 450px; }
+
+.panel {
+  width: 100%;
+  background: #eee;
+  position: relative; }
+
+.panel:first-child {
+  z-index: 10;
+  position: relative;
+  transform: scale(1) translate(0, 0);
+  transition: transform 0.3s; }
+
+.panel:nth-child(n+2) {
+  position: absolute;
+  top: 0; }
+
+.panel:nth-child(2) {
+  transform: scale(0.95) translate(0, -40px);
+  z-index: 5;
+  transition: transform 0.3s, opacity 0.3s; }
+
+.panel:nth-child(3) {
+  transform: scale(0.9) translate(0, -80px);
+  z-index: 4;
+  opacity: 0.8;
+  transition: transform 0.3s, opacity 0.3s; }
+
+.panel:nth-child(n+4) {
+  transform: scale(0.85) translate(0, -120px);
+  opacity: 0.5;
+  transition: transform 0.3s, opacity 0.3s; }
+
+.panel:nth-child(n+5) {
+  opacity: 0; }
+
+.panel--item {
+  cursor: pointer; }
+
+.panel--last {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  color: #fff; }
+  .panel--last i {
+    font-size: 160px; }
+
+.variant-1 {
+  background: #407EFF; }
+
+.variant-2 {
+  background: #2BFFAE; }
+
+.variant-3 {
+  background: #FFAC14; }
+
+.variant-4 {
+  background: #00D6E8; }
+
+.variant-5 {
+  background: #FFEF6F; }
+
+.panel__head {
+  overflow: hidden;
+  padding: 20px; }
+
+.head__option {
+  margin: 0 20px;
+  visibility: hidden; }
+
+.head__option--share {
+  float: left; }
+
+.head__option--close {
+  float: right; }
+
+.panel__main {
+  padding: 20px; }
+
+.profile__img {
+  width: 150px;
+  border-radius: 500px;
+  margin: 0 auto;
+  overflow: hidden; }
+  .profile__img img {
+    display: block; }
+
+.profile__title {
+  text-align: center; }
+
+.options {
+  text-align: center; }
+
+.option {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  color: #fff; }
+  .option i {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%); }
+
+.option--discard {
+  background: #333; }
+
+.option--save {
+  background: #f06; }
+
+.panel.transition--discard {
+  transform: perspective(4000px) rotateX(-90deg);
+  transition: transform 0.5s;
+  transform-origin: 50% 100%; }
+
+.panel.transition--save {
+  transform: translate(50%, -120%) scale(0.1);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  transform-origin: 50% 100%; }
+
+.item-saved i {
+  color: #f06;
+  transition: color 1s; }
+
+.option--disabled {
+  animation: wobble 0.1s cubic-bezier(0.1, 0.7, 1, 0.1) 2; }
+
+@keyframes wobble {
+  from {
+    transform: translate(0, 0); }
+  25% {
+    transform: translate(5px, 0); }
+  50% {
+    transform: translate(0, 0); }
+  75% {
+    transform: translate(-5px, 0); }
+  to {
+    transform: translate(0, 0); } }
+
+.fullscreen-view {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  height: 100%; }
+  .fullscreen-view .panel {
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.3s;
+    cursor: initial; }
+  .fullscreen-view .head__option {
+    visibility: visible; }
+  .fullscreen-view .profile__title {
+    text-align: left; }
+    .fullscreen-view .profile__title h1 {
+      text-align: center; }
+  .fullscreen-view .profile__summary {
+    display: block; }
+  .fullscreen-view.show {
+    display: block; }
+  .fullscreen-view .panel.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s, transform 0.3s; }
