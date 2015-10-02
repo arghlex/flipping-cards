@@ -12,6 +12,7 @@ A rough ui prototype for browsing individual data items.
 - Add share button animation
 - Add share button functionality
 - Add save and review functionality
+- Add search functionality
 
 
 Loosely based on Hanna Jung's [Flipping Card Freebie](https://dribbble.com/shots/2106306-Flipping-Card-Freebie).
