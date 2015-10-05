@@ -1,0 +1,34 @@
+{
+    "name": "flipping-cards",
+    "version": "0.0.1",
+    "description": "UI prototype",
+    "author": {
+        "name": "Alex Mellor",
+        "email": "hello@alexmellor.com",
+        "web": "http://alexmellor.com"
+    },
+    "contributors": [
+        {
+            "name": "Alex Mellor",
+            "email": "hello@alexmellor.com",
+            "url": "http://alexmellor.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:arghlex/flipping-cards.git"
+    },
+    "keywords": ["flipping cards", "profile ui", "profile card ui"],
+    "bugs": {
+        "url" : "http://github.com/arghlex/flipping-cards/issues",
+        "email" : "hello@alexmellor.com"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "gulp": "~3.9.0",
+        "gulp-sass": "~2.0.4",
+        "gulp-watch": "~4.3.5",
+        "gulp-uglify": "~1.4.1"
+    }
+}
